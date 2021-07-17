@@ -45,11 +45,11 @@ def ping():
     return {"hackathon group 8": "go through it"}
 
 
-@app.post("/predict_creditscore", response_model=QueryOut, status_code=200)
+@app.post("/credit_score", response_model=QueryOut, status_code=200)
 # Route to do the prediction using the ML model defined.
 # Payload: QueryIn containing the parameters
 # Response: QueryOut containing the risk class predicted (200)
-def predict_creditscore(query_data: QueryIn):
+def credit_score(query_data: QueryIn):
 
     return {"Cost_Matrix_Risk": predict(query_data)}
 
