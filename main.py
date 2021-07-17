@@ -39,7 +39,7 @@ class FeedbackIn(BaseModel):
 
 
 # Route definitions
-@app.get("/hackathon group 8")
+@app.get("/hackathon_group_8")
 # Healthcheck route to ensure that the API is up and running
 def ping():
     return {"hackathon group 8": "go through it"}
