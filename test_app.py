@@ -11,7 +11,7 @@ def test_ping():
 
 
 # test to check if Iris Virginica is classified correctly
-def test_predict_creditscore():
+def test_credit_score():
     # defining a sample payload for the testcase
     payload = {
       "Duration_in_month": 0,
@@ -23,7 +23,7 @@ def test_predict_creditscore():
       "Number_of_people_being_liable_to_provide_maintenance_for": 0
     }
     with TestClient(app) as client:
-        response = client.post("/predict_creditscore", json=payload)
+        response = client.post("/credit_score", json=payload)
         # asserting the correct response is received
         assert response.status_code == 200
         
