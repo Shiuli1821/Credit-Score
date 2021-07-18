@@ -13,30 +13,29 @@ app.add_event_handler("startup", load_model)
 
 # class which is expected in the payload
 class QueryIn(BaseModel):
-    Duration_in_month: int
-    Credit_amount: int
-    Installment_rate_in_percentage_of_disposable_income: int
-    Present_residence_since: int
-    Age_in_years: int
-    Number_of_existing_credits_at_this_bank: int
-    Number_of_people_being_liable_to_provide_maintenance_for: int
+    Durationinmonth: int
+    Creditamount: int
+    Installmentrateinpercentageofdisposableincome: int
+    Presentresidencesince: int
+    Ageinyears: int
+    Numberofexistingcreditsatthisbank: int
+    Numberofpeoplebeingliabletoprovidemaintenancefor: int
 
 
 # class which is returned in the response
 class QueryOut(BaseModel):
-    Cost_Matrix_Risk: str
+    CostMatrixRisk: str
 
 
 # class which is expected in the payload while re-training
 class FeedbackIn(BaseModel):
-    Duration_in_month: int
-    Credit_amount: int
-    Installment_rate_in_percentage_of_disposable_income: int
-    Present_residence_since: int
-    Age_in_years: int
-    Number_of_existing_credits_at_this_bank: int
-    Number_of_people_being_liable_to_provide_maintenance_for: int
-
+    Durationinmonth: int
+    Creditamount: int
+    Installmentrateinpercentageofdisposableincome: int
+    Presentresidencesince: int
+    Ageinyears: int
+    Numberofexistingcreditsatthisbank: int
+    Numberofpeoplebeingliabletoprovidemaintenancefor: int
 
 # Route definitions
 @app.get("/hackathon_group_8")
@@ -51,7 +50,7 @@ def ping():
 # Response: QueryOut containing the risk class predicted (200)
 def credit_score(query_data: QueryIn):
 
-    return {"Cost_Matrix_Risk": predict(query_data)}
+    return {"CostMatrixRisk": predict(query_data)}
 
 @app.post("/feedback_loop", status_code=200)
 # Route to further train the model based on user input in form of feedback loop
