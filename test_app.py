@@ -14,13 +14,13 @@ def test_ping():
 def test_credit_score():
     # defining a sample payload for the testcase
     payload = {
-      "Duration_in_month": 0,
-      "Credit_amount": 0,
-      "Installment_rate_in_percentage_of_disposable_income": 0,
-      "Present_residence_since": 0,
-      "Age_in_years": 0,
-      "Number_of_existing_credits_at_this_bank": 0,
-      "Number_of_people_being_liable_to_provide_maintenance_for": 0
+      "Durationinmonth": 0,
+      "Creditamount": 0,
+      "Installmentrateinpercentageofdisposableincome": 0,
+      "Presentresidencesince": 0,
+      "Ageinyears": 0,
+      "Numberofexistingcreditsatthisbank": 0,
+      "Numberofpeoplebeingliabletoprovidemaintenancefor": 0
     }
     with TestClient(app) as client:
         response = client.post("/credit_score", json=payload)
